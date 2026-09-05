@@ -1,0 +1,35 @@
+# S3 credentials - used to upload a resource pack.
+# You can generate these credentials by heading to: https://dash.cloudflare.com/<account-id>/r2/api-tokens/create?type=user
+# or, by visiting R2 Object Storage -> Manage API Tokens -> Create User API Token
+s3-bucket-endpoint: https://7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e.r2.cloudflarestorage.com/my-s3rp-bucket
+s3-access-key-id: d4d299b211f5c24a73cb964c65b29e5b
+s3-access-key-secret: 8cc7daaa7f907fd12c291ddd27d273e9855500ca362c9361b8bff2e5c2597c1d
+
+# This URL is exposed to players. Generate this by going to your R2 bucket's settings page.
+# Then generate a 'Public Development URL' and paste it here.
+# That is the quickest way. The saner option is to use 'Custom Domains'.
+#
+# You may use {filename} placeholder in this URL for custom public URLs.
+public-url: https://pub-4f8c92a1b3e7d5f06c82a1b4e9f03c72.r2.dev
+
+# The plugin will reupload resource pack to S3 after this duration since last upload. You may want this if you are using
+# an expiration/deletion policy for your bucket. Set this to null to disable this feature.
+upsert-duration: 8 hours
+
+# List of resource packs to pick from your server's resource_packs.yml and host on the CDN.
+# Resource packs matching any of these rules will be selected.
+# You can use wildcards like '*', '?', '[seq]', '[!seq]' here.
+# For more description on wildcards, see: https://www.php.net/manual/en/function.fnmatch.php
+#
+# For example, if your resource_packs.yml looks like:
+# resource_stack:
+#  - Deadpool.zip
+#  - CapeResourcePack.zip
+#  - BetterVanilla.mcpack
+# And you want to host only BetterVanilla.mcpack, you would use this configuration:
+# resource-packs:
+#   - BetterVanilla.mcpack
+#
+# The default rule ("*") means ALL resource packs are selected.
+resource-packs:
+  - "*"

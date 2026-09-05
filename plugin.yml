@@ -1,0 +1,5 @@
+name: S3RP
+main: cosmicpe\s3rp\Loader
+api: 5.0.0
+version: 1.0.0
+author: Muqsit
