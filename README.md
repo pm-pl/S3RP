@@ -17,7 +17,9 @@ This is most likely an overkill if you have a tiny pack and a quiet server.
 	- Set this as your `public-url` in plugin `config.yml`
     - Alternatively, you can configure **Custom Domains** which is what Cloudflare recommends for production usage.
 5. Go back to **R2 Object Storage** page, select **Manage API Tokens**
-6. Select **Create User API token**. Under **Specify bucket(s)**, select **Apply to specific buckets only** and select the bucket you just created.
+6. Select **Create User API token**.
+    - Set permission to **Object Read & Write** - S3RP auto-uploads packs to S3 so we need write permission.
+    - Under **Specify bucket(s)**, select **Apply to specific buckets only** and select the bucket you just created.
 7. Click **Create User API Token**.
 8. Copy your **Access Key ID**.
 	- Set this as your `s3-access-key-id` in plugin `config.yml`
